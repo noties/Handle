@@ -8,7 +8,7 @@ import java.util.List;
 
 import ru.noties.handle.events.NoEventHandlerEvent;
 import ru.noties.handle.events.OnDispatchExceptionEvent;
-import ru.noties.handle.events.StickyEventUsedEvent;
+import ru.noties.handle.events.StickyEventNotUsedEvent;
 
 /**
  * Created by Dimitry Ivanov on 21.07.2015.
@@ -92,7 +92,7 @@ class HandleHandler extends Handler {
         final Object obj;
         switch (type) {
             case STICKY_VALID:
-                obj = new StickyEventUsedEvent(msg.obj);
+                obj = new StickyEventNotUsedEvent(msg.obj);
                 break;
             default:
                 obj = msg.obj;

@@ -7,13 +7,13 @@ import ru.noties.handle.Handle;
 import ru.noties.handle.IEventHandler;
 import ru.noties.handle.events.NoEventHandlerEvent;
 import ru.noties.handle.events.OnDispatchExceptionEvent;
-import ru.noties.handle.events.StickyEventUsedEvent;
+import ru.noties.handle.events.StickyEventNotUsedEvent;
 import ru.noties.handle.annotations.EventHandler;
 
 /**
  * Created by Dimitry Ivanov on 21.07.2015.
  */
-@EventHandler({ OnDispatchExceptionEvent.class, NoEventHandlerEvent.class, StickyEventUsedEvent.class})
+@EventHandler({ OnDispatchExceptionEvent.class, NoEventHandlerEvent.class, StickyEventNotUsedEvent.class})
 public class BaseActivity extends Activity {
 
     private final IEventHandler mHandler = new BaseActivityEventHandler() {
@@ -28,7 +28,7 @@ public class BaseActivity extends Activity {
         }
 
         @Override
-        public void onEvent(StickyEventUsedEvent event) {
+        public void onEvent(StickyEventNotUsedEvent event) {
             final Object sticky = event.getStickyEvent();
             Debug.i("sticky no used, removing, sticky: %s", sticky);
             Handle.cancelSticky(sticky);

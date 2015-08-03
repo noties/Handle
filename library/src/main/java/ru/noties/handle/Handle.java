@@ -10,6 +10,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import ru.noties.handle.events.StickyEventNotUsedEvent;
+
 /**
  * Main class for this library.
  *
@@ -148,7 +150,7 @@ public class Handle {
      * This event will be posted as a usual event if it has event handlers or
      * when an {@link IEventHandler} registers that could handle this event {@link #register(IEventHandler)}
      * If sticky event was not removed from the memory storage after {@link #DEF_STICKY_VALID_MILLIS} a
-     * {@link ru.noties.handle.events.StickyEventUsedEvent} will be posted. If you wish to modify
+     * {@link StickyEventNotUsedEvent} will be posted. If you wish to modify
      * a valid millis parameter see {@link #_postSticky(Object, long)}
      * @see #_postSticky(Object, long)
      * @param what a sticky event
@@ -235,5 +237,13 @@ public class Handle {
             return null;
         }
         return out;
+    }
+
+    // for testing
+    static void clear() {
+        final Handle handle = Handle.getInstance();
+        handle._cancelAll();
+        handle.mListeners.clear();
+        handle.mStickies.clear();
     }
 }
