@@ -7,7 +7,6 @@ import javax.lang.model.element.TypeElement;
 import javax.lang.model.type.MirroredTypesException;
 import javax.lang.model.type.TypeMirror;
 
-import ru.noties.handle.EventHandler;
 import ru.noties.handle.processor.Logger;
 
 /**
@@ -22,7 +21,7 @@ public class EventHandlerParser {
     }
 
     public EventHandlerHolder parse(TypeElement element) {
-        final EventHandler eventHandler = element.getAnnotation(EventHandler.class);
+        final ru.noties.handle.annotations.EventHandler eventHandler = element.getAnnotation(ru.noties.handle.annotations.EventHandler.class);
         if (eventHandler == null) {
             return null;
         }

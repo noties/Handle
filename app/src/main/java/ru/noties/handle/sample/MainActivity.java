@@ -6,7 +6,7 @@ import android.os.SystemClock;
 import ru.noties.debug.Debug;
 import ru.noties.handle.Handle;
 import ru.noties.handle.IEventHandler;
-import ru.noties.handle.EventHandler;
+import ru.noties.handle.annotations.EventHandler;
 
 /**
  * Created by Dimitry Ivanov on 21.07.2015.

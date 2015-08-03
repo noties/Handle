@@ -1,4 +1,4 @@
-package ru.noties.handle;
+package ru.noties.handle.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
  * Created by Dimitry Ivanov on 21.07.2015.
  */
 @Target(ElementType.TYPE)
-@Retention(RetentionPolicy.SOURCE)
+@Retention(RetentionPolicy.CLASS)
 public @interface EventHandler {
     Class<?>[] value();
 }

@@ -18,16 +18,4 @@ android {
     }
 }
 
-task generateJar(type: Copy) {
-    group 'Build'
-    description 'Lib as a jar'
-    from 'build/intermediates/bundles/release/classes.jar'
-    into 'build/outputs/jar/'
-    rename('classes.jar', "handle-${VERSION_NAME}.jar")
-}
-
-gradle.projectsEvaluated {
-    assemble.dependsOn(generateJar)
-}
-
 apply from: 'https://raw.githubusercontent.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'

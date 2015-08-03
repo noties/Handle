@@ -17,7 +17,6 @@ import javax.lang.model.util.Elements;
 import javax.lang.model.util.Types;
 import javax.tools.Diagnostic;
 
-import ru.noties.handle.EventHandler;
 import ru.noties.handle.processor.parser.EventHandlerHolder;
 import ru.noties.handle.processor.parser.EventHandlerParser;
 import ru.noties.handle.processor.writer.EventHandlerWriter;
@@ -44,7 +43,7 @@ public class HandleProcessor extends AbstractProcessor implements Logger {
 
     @Override
     public Set<String> getSupportedAnnotationTypes() {
-        return Collections.singleton(EventHandler.class.getCanonicalName());
+        return Collections.singleton(ru.noties.handle.annotations.EventHandler.class.getCanonicalName());
     }
 
     @Override

@@ -1,7 +1,10 @@
 apply plugin: 'java'
 
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(':annotations')
 }
 
 apply from: '../gradle_maven_jar_publish.gradle'

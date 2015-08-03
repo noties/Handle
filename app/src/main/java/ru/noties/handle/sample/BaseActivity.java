@@ -8,7 +8,7 @@ import ru.noties.handle.IEventHandler;
 import ru.noties.handle.events.NoEventHandlerEvent;
 import ru.noties.handle.events.OnDispatchExceptionEvent;
 import ru.noties.handle.events.StickyEventUsedEvent;
-import ru.noties.handle.EventHandler;
+import ru.noties.handle.annotations.EventHandler;
 
 /**
  * Created by Dimitry Ivanov on 21.07.2015.
