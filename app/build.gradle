@@ -1,0 +1,38 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.5.1'
+    }
+}
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        applicationId "ru.noties.handle.sample"
+        minSdkVersion 8
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile 'ru.noties:debug:2.0.0'
+    compile project(':library')
+    apt project(':processor')
+    provided project(':processor')
+}

@@ -1,0 +1,31 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        minSdkVersion 8
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+task generateJar(type: Copy) {
+    group 'Build'
+    description 'Lib as a jar'
+    from 'build/intermediates/bundles/release/classes.jar'
+    into 'build/outputs/jar/'
+    rename('classes.jar', "handle-${VERSION_NAME}.jar")
+}
+
+gradle.projectsEvaluated {
+    assemble.dependsOn(generateJar)
+}
