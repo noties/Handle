@@ -32,7 +32,6 @@ android {
 
 dependencies {
     compile 'ru.noties:debug:2.0.0'
-    compile project(':library')
-    apt project(':processor')
-    provided project(':processor')
+    compile 'ru.noties:handle:1.0.0'
+    apt ('ru.noties:handle-processor:1.0.0')
 }

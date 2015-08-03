@@ -29,3 +29,5 @@ task generateJar(type: Copy) {
 gradle.projectsEvaluated {
     assemble.dependsOn(generateJar)
 }
+
+apply from: 'https://raw.githubusercontent.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
