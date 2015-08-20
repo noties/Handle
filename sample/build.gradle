@@ -32,7 +32,7 @@ android {
 
 dependencies {
     compile 'ru.noties:debug:2.0.0'
-    compile project(':library')
-    compile project(':annotations')
-    apt project(':processor')
+    compile project(':handle-library')
+    compile project(':handle-annotations')
+    apt project(':handle-processor')
 }

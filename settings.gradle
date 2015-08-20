@@ -1,1 +1,1 @@
-include ':app', ':library', ':processor', ':annotations', ':test'
+include ':sample', ':handle-library', ':handle-processor', ':handle-annotations', ':handle-library-test'
