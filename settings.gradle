@@ -1,1 +1,1 @@
-include ':sample', ':handle-library', ':handle-processor', ':handle-annotations', ':handle-library-test'
+include ':sample', ':handle-library', ':handle-processor', ':handle-annotations', ':handle-library-test', ':handle-benchmark'
